@@ -15,6 +15,10 @@
   --main-bg: #2f303a;
   --hero-btn-bg-active: #188ce8;
   --filters-bg: #f5f4fa;
+  --container-bd: #ffffff;
+  /* margins */
+  --card-set-gap: 30px;
+  --between-section: 94px;
 }
 
 body {
@@ -38,6 +42,13 @@ ol {
   margin-bottom: 0;
 }
 /*  outline: 2px solid tomato; */
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .list {
   padding-left: 0;
   margin-top: 0;
@@ -188,10 +199,12 @@ ol {
   display: flex;
 }
 .benefit-item {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
   width: 270px;
-  margin-top: 94px;
-  margin-bottom: 94px;
+  margin-top: var(--between-section);
+  margin-bottom: var(--between-section);
 }
+
 .benefit-item:not(:last-child) {
   margin-right: 30px;
 }
@@ -226,16 +239,18 @@ ol {
 }
 .servise-list {
   display: flex;
-  margin-bottom: 94px;
+  margin-bottom: var(--between-section);
 }
 .servise-item:not(:last-child) {
   margin-right: 30px;
 }
 /* <!--Наша команда--> */
 .team {
-  padding-top: 94px;
+  padding-top: var(--between-section);
 }
 .command {
+  display: flex;
+
   font-size: 16px;
   line-height: 1.19;
   background-color: #f5f4fa;
@@ -243,15 +258,30 @@ ol {
 
   /* text-align: center; */
 }
+.command-item:not(:last-child) {
+  margin-right: 30px;
+}
+.command-item {
+  text-align: center;
+  background-color: var(--container-bd);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
 .command-list {
   display: flex;
+  padding-bottom: var(--between-section);
 }
 .command-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+
   font-size: 16px;
   font-weight: 500;
   color: var(--main-title);
 }
-/* .below-command-title {наследует} */
+.below-command-title {
+  margin-bottom: 30px;
+}
 /*    <!--Подвал--> */
 .footer {
   padding-top: 60px;
@@ -276,7 +306,24 @@ ol {
 }
 
 /* PORTFOLIO */
+/* filters */
+.filters-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 34px;
+  padding-bottom: 16px;
+}
+.filter-item:not(:last-child) {
+  margin-right: 8px;
+}
 .filter-button {
+  border: 0;
+  border-radius: 4px;
+  padding-top: 6px;
+  padding-right: 22px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+
   background-color: var(--filters-bg);
   font-weight: 500;
   font-size: 16px;
@@ -290,7 +337,28 @@ ol {
   background-color: var(--accent-color);
   color: var(--accent-btn);
 }
+/* projects */
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
+}
+.project-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  background-color: var(--container-bd);
+  border: 1px solid #eeeeee;
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
+  margin-bottom: var(--between-section);
+}
+.card-content {
+  padding: 20px 24px;
+}
+
 .project-title {
+  margin-bottom: 4px;
+
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
