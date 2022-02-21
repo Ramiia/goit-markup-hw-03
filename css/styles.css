@@ -83,10 +83,12 @@ ul {
 }
 .logo-header {
   color: var(--logo-header);
-  margin-right: 93px;
 }
 .logo-footer {
   color: var(--logo-footer);
+}
+.nav {
+  margin-left: 93px;
 }
 .contact-list,
 .nav-list {
